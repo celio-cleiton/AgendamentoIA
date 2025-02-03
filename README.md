@@ -1,6 +1,5 @@
-Vou detalhar a estrutura completa de pastas e arquivos atualizada com as melhorias propostas:
+Estrutura completa de pastas e arquivos:
 
-```bash
 📦 agendamento-ia
 ├─ 📂 .env.local            # Variáveis de ambiente locais
 ├─ 📂 .github/workflows     # CI/CD (opcional)
@@ -113,36 +112,6 @@ declare global {
     signOut: () => void
   }
 }
-
-export {}
-```
-
-**Exemplo de arquivo de configuração Next (`next.config.js`):**
-
-```javascript
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    domains: ['lh3.googleusercontent.com'], // Domínios permitidos para otimização
-  },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value: `default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' ${process.env.API_URL}`,
-          }
-        ]
-      }
-    ]
-  }
-}
-
-module.exports = nextConfig
-```
 
 Essa estrutura oferece:
 
